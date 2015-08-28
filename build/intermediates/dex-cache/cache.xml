@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/vermel/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/pre-dexed/debug/okio-1.6.0-b9178f0825184bed3507b67d2d3362b20030a4b4.jar" />
+    </item>
+    <item
+        jar="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/pre-dexed/debug/classes-38e1cf5364a088798f922f4e591da395f14ad17c.jar" />
+    </item>
+    <item
+        jar="/Users/vermel/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.1/8453703164e230cce848b387f6b8c06f10a22d59/picasso-2.5.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8453703164e230cce848b387f6b8c06f10a22d59">
+        <dex dex="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/pre-dexed/debug/picasso-2.5.1-d34fda61e6e466268c9be131b7086d6fd43e231b.jar" />
+    </item>
+    <item
+        jar="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-ecba51ff47afcc1d7f423c3b293d709d57ff2da8.jar" />
+    </item>
+    <item
+        jar="/Users/vermel/Downloads/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-1acde8dc812fc159b3696d5b6dcf0fbbcb26f6ac.jar" />
+    </item>
+    <item
+        jar="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/pre-dexed/debug/classes-ecde79a8635e557e9b9aaeba620edc60c1d69191.jar" />
+    </item>
+    <item
+        jar="/Users/vermel/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="/Users/vermel/Downloads/exercice-android-master/app/build/intermediates/pre-dexed/debug/okhttp-2.5.0-7b8ed85c0f5d20697f2157044e6df80e758f6c4c.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Appturbo Test</string>
+    <string name="title_section1">Apps List</string>
+    <string name="title_section2">About</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="appturbo_name">Appturbo</string>
+    <string name="appturbo_description">AppTurbo was founded in 2011 based on one simple idea. Now we are live worldwide and available in 15 languages.\n\n With over 50 employees and 15 different nationalities, we create unique and exciting content daily for our 36 millions users. And the smile is included.</string>
+    <string name="my_description">"My name is %1$s, I have %2$d years old. I pass this test with the goal to make an internship in Appturbo from %3$tB to %4$tB."</string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="logo_content_desc">Logo of the Application</string>
+    <string name="screenshot_content_desc">Screenshot de l\'application</string>
+
+</resources>
