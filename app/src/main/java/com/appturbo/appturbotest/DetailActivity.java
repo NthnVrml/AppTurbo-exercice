@@ -21,6 +21,16 @@ public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_APPLICATION = "extra_application";
 
+
+        /*
+        *  Get the Application Model from the Intent Extra and init the view:
+        * @id/name
+        * @id/description
+        * @id/logo
+        * @id/screenshot
+        * In order to load the data you will need to load image from the network
+        */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +40,17 @@ public class DetailActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
 
+        // I get Application Model
         Application model = (Application) getIntent().getParcelableExtra(DetailActivity.EXTRA_APPLICATION);
-        System.out.println("MODEL " + model.getName());
 
+        // Init View
         TextView app_name = (TextView) findViewById(R.id.app_name);
         app_name.setText(model.getName());
 
         TextView app_desc = (TextView) findViewById(R.id.app_desc);
         app_desc.setText(model.getDescription());
 
+        // Picasso is a powerful image downloading and caching library for Android
         ImageView ivIcon = (ImageView) findViewById(R.id.logo);
         Picasso.with(this)
                 .load(model.getLogo())
@@ -48,17 +60,6 @@ public class DetailActivity extends AppCompatActivity {
         Picasso.with(this)
                 .load(model.getScreenshot())
                 .into(ivScreenshot);
-
-        /*
-        * TODO: Get the Application Model from the Intent Extra and init the view:
-        * @id/name
-        * @id/description
-        * @id/logo
-        * @id/screenshot
-        * In order to load the data you will need to load image from the network
-        */
-
-
     }
 
     @Override

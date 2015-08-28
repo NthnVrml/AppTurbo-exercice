@@ -33,11 +33,11 @@ public class AppturboTestActivity extends AppCompatActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         /*
-        * TODO: Set the correct Fragment according to the position
+        * Set Fragment according to the position
         * Position 1 -> ListApplicationFragment
         * Position 2 -> AboutFragment
         *
-        * Use the SupportFragmentManager and replace the Fragment in the @id/container
+        * I use the SupportFragmentManager and replace the Fragment in the @id/container
         */
 
         FragmentManager fragmentManager = getSupportFragmentManager();

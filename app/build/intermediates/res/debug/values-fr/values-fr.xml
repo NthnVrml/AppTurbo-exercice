@@ -21,7 +21,7 @@
     <string name="appturbo_description">AppTurbo was founded in 2011 based on one simple idea. Now we are live worldwide and available in 15 languages.\n\n With over 50 employees and 15 different nationalities, we create unique and exciting content daily for our 36 millions users. And the smile is included.</string>
     <string name="appturbo_name">Appturbo</string>
     <string name="logo_content_desc">Logo of the Application</string>
-    <string name="my_description">"Je m'apelle' %1$s, J'ai' %2$d. Je passe ce test afin d'effectuer mon stage chez AppTurbo du %3$tB au %4$tB."</string>
+    <string name="my_description">"Je m'apelle' %1$s, J'ai' %2$d ans. Je passe ce test afin d'effectuer mon stage chez AppTurbo de %3$tB à %4$tB."</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="screenshot_content_desc">Screenshot de l\'application</string>

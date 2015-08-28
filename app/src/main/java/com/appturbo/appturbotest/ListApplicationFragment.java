@@ -53,27 +53,28 @@ public class ListApplicationFragment extends ListFragment {
     }
 
     /*
-     * TODO: Load the view of the Fragment, this need to be a listview with the android standard list id.
+     * I load the view of the Fragment, this need to be a listview with the android standard list id.
      */
 
 
     @Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-        System.out.println("CACA");
+		// I load data and stock its in list of Application Object.
+        loadData();
 
-
-		loadData();
-
+        // Init Custom Adapter
         ListViewAdpater adapter = new ListViewAdpater(getActivity(), list);
+
+        // Set Custom adapter
         setListAdapter(adapter);
 
+        //Click Action and drop data in DetailActivity.
         getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(getActivity(), DetailActivity.class);
                 i.putExtra(DetailActivity.EXTRA_APPLICATION, list.get(position));
-                System.out.println("Nananan "+name);
                 startActivity(i);
             }
         });
