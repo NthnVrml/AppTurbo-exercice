@@ -32,13 +32,12 @@ import org.json.JSONObject;
 
 public class ListApplicationFragment extends ListFragment {
 
-    private static final String SCREENSHOT = "screenshot";
     private final List<Application> list = new ArrayList<>();
 
     private static final String NAME = "name";
     private static final String DESCRIPTION = "description";
     private static final String LOGO = "logo";
-
+    private static final String SCREENSHOT = "screenshot";
     private static final String URL = "http://ligol.free.fr/Android/data.json";
 
     private String name;
@@ -81,73 +80,48 @@ public class ListApplicationFragment extends ListFragment {
 	}
 
     /*
-		 * TODO: Load the json from the Web, parse it and build a list of Application model in order to notify the Adapter with new data.
-		 */
+	* Load the json from the Web, parse it and build a list of Application model in order to notify the Adapter with new data.
+	 */
 
     private void loadData() {
 
         JSONArray jsonArray;
-//        StringBuilder builder = new StringBuilder();
-//        HttpClient client = new DefaultHttpClient();
+
+        /*
+         * Making a request to url and getting response
+         * Go to GetObjectJSONByURL()
+         */
+        GetObjectJSONByURL Object = new GetObjectJSONByURL();
+        String response = null;
 
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        GetObjectJSONByURL example = new GetObjectJSONByURL();
-        String response = null;
         try {
-            response = example.run(URL);
+            response = Object.run(URL);
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-//        if (android.os.Build.VERSION.SDK_INT > 9) {
-//            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//            StrictMode.setThreadPolicy(policy);
-//        }
-//            HttpGet httpGet = new HttpGet("http://ligol.free.fr/Android/data.json");
-//            try {
-//                HttpResponse response = client.execute(httpGet);
-//                StatusLine statusLine = response.getStatusLine();
-//                int statusCode = statusLine.getStatusCode();
-//
-//                if (statusCode == 200) {
-//                    String line;
-//                    HttpEntity entity = response.getEntity();
-//                    InputStream content = entity.getContent();
-//                    BufferedReader reader = new BufferedReader(new InputStreamReader(content));
-//
-//                    while ((line = reader.readLine()) != null) {
-//                        builder.append(line);
-//                    }
-//                } else {
-////                    Failed to download file
-//                }
-//                System.out.println("ALL" + builder.toString());
-
                 if (response != null) {
                     try {
+                        // Getting JSON Array node
                         jsonArray = new JSONArray(response);
-                        System.out.println("FDP " +jsonArray.toString());
                         for (int i = 0; i < jsonArray.length(); i++) {
 
+                            //Parsing JSON Object
                             JSONObject c = (JSONObject) jsonArray.getJSONObject(i);
+
+                            //Finding
                             name = c.getString(NAME);
                             description = c.getString(DESCRIPTION);
                             logo = c.getString(LOGO);
                             screenshot = c.getString(SCREENSHOT);
 
-                            System.out.println("name" + name);
-                            System.out.println("Descr " + description);
-                            System.out.println("logo" + logo);
-                            System.out.println("logo" + screenshot);
-
-
+                           // Template List for Single Application
                             Apps = new Application(name, description, logo, screenshot);
-                            Apps.setName(name);
-                            Apps.setDescription(description);
-                            Apps.setLogo(logo);
-                            Apps.setScreenshot(screenshot);
+
+                            //// Adding each child node to list
                             list.add(Apps);
                         }
                     } catch (JSONException e) {
@@ -156,17 +130,14 @@ public class ListApplicationFragment extends ListFragment {
                 } else {
                     System.out.println("ServiceHandler Couldn't get any data from the url");
                 }
-
-//            } catch (ClientProtocolException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-
 	}
 
-
+    /*
+     *  This function downloads a URL and return its contents as a string
+     *   For information: http://square.github.io/okhttp/
+     */
     public class GetObjectJSONByURL {
+
         OkHttpClient client = new OkHttpClient();
 
         String run(String url) throws IOException {
@@ -180,10 +151,8 @@ public class ListApplicationFragment extends ListFragment {
     }
 
     /*
-     * TODO: You need to develop the ListAdapter in order to show each item in the list. This adapter need to load the @layout/list_application_item and load all of the data in it from the Application model or the Network.
+     *  I develop the ListAdapter in order to show each item in the list. This adapter load the @layout/list_application_item and load all of the data in it from the Application model or the Network.
      */
-
-
 
     public class ListViewAdpater extends ArrayAdapter<Application> {
 
@@ -199,6 +168,7 @@ public class ListApplicationFragment extends ListFragment {
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(R.layout.list_application_item, parent, false);
 
+                // Configure view holder
                 viewHolder = new ViewHolder();
                 viewHolder.ivIcon = (ImageView) convertView.findViewById(R.id.logo);
                 viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.app_name);
@@ -207,6 +177,7 @@ public class ListApplicationFragment extends ListFragment {
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
+            // Fill data
             Application item = getItem(position);
             viewHolder.ivIcon.setImageDrawable(getDrawable(item.getLogo()));
             viewHolder.tvTitle.setText(item.getName());
